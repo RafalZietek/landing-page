@@ -6,15 +6,15 @@
 
 .clearfix:after {
 	content: "";
-	display: block;
+	display: table;
 	clear: both;
 }
 
 body {
 	position: relative;
-	/* border: 20px solid #bbb; */
 	font-size: 13px;
 	margin: 0 auto;
+	font-family: 'Open Sans', sans-serif, Arial, Helvetica;
 }
 
 .wraper {
@@ -61,7 +61,7 @@ body {
 
 header {
 	height: 100vh;
-	background-image: url('../banner-image-1.jpg');
+	background-image: url('../img/banner-image-1.jpg');
 	background-attachment: fixed;
 	background-size: cover;
 	background-position-x: center;
@@ -182,3 +182,237 @@ header h2::after {
 }
 
 /* end header */
+#about,
+#gallery,
+#services,
+#testimonials {
+	padding-top: 15%;
+	padding-bottom: 5%;
+}
+
+.mainDiv {
+	width: 30%;
+	float: left;
+	padding: 0 10px 50px 0;
+}
+
+h3,
+.sectionParagraph {
+	color: #9c9c9c;
+	font-size: 1.2em;
+}
+
+.sectionTitle {
+	width: 100%;
+	padding-bottom: 15px;
+	font-size: 34px;
+	font-weight: 700;
+}
+
+#about h2.sectionTitle::after {
+	content: "";
+	display: block;
+	margin-top: 30px;
+	width: 30px;
+	height: 5px;
+	background-color: #d2b356;
+}
+
+.sectionParagraph {
+	color: #9c9c9c;
+	/* font-size: 16px; */
+	font-weight: 300;
+	margin-top: 25px;
+}
+
+.box {
+	float: right;
+	width: 30%;
+	margin-left: 15px;
+	padding: 10px;
+}
+
+#about .fas,
+#about .fab {
+	color: #d2b356;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.box h4 {
+	font-size: 1.2em;
+	margin-bottom: 10px;
+}
+
+.box p {
+	font-size: 1.1em;
+	margin-bottom: 55px;
+}
+
+/* end section about */
+#gallery {
+	margin-bottom: 10%;
+}
+
+.images {
+	float: left;
+	width: 33%;
+	height: 25vh;
+	background-position: center;
+	background-size: 100%;
+	transition: 1s;
+	cursor: pointer;
+}
+
+div.images:nth-child(1) {
+	background-image: url('../img/gallery-image-1.jpg');
+}
+
+div.images:nth-child(2) {
+	background-image: url('../img/gallery-image-2.jpg');
+}
+
+div.images:nth-child(3) {
+	background-image: url('../img/gallery-image-3.jpg');
+}
+
+div.images:nth-child(4) {
+	background-image: url('../img/gallery-image-4.jpg');
+}
+
+div.images:nth-child(5) {
+	background-image: url('../img/gallery-image-5.jpg');
+}
+
+div.images:nth-child(6) {
+	background-image: url('../img/gallery-image-6.jpg');
+}
+
+div.images:hover {
+	opacity: 0.5;
+	background-size: 130%;
+}
+
+/* end section gallery */
+#services {
+	display: flex;
+	justify-content: space-around;
+
+}
+
+.item {
+	flex-basis: 30%;
+}
+
+.item img {
+	width: 90%;
+}
+
+#services .col-1 {
+	text-align: right;
+	color: #111;
+	font-size: 1.5em;
+}
+
+.col-1 cite {
+	display: block;
+	padding-top: 15px;
+	font-size: 0.9rem;
+	font-weight: normal;
+}
+
+#services h2.sectionTitle::after {
+	content: "";
+	display: block;
+	margin-top: 30px;
+	width: 30px;
+	height: 5px;
+	background-color: #d2b356;
+}
+
+.col-2 .first {
+	padding-top: 20px;
+	padding-bottom: 25px;
+	color: #9c9c9c;
+	font-size: 1.2em;
+}
+
+.col-2 p {
+	padding-top: 25px;
+	font-size: 1.1em;
+}
+
+.col-2 .button {
+	padding: 10px 20px;
+	margin-top: 12%;
+}
+
+/* .button span { */
+/* display: block; */
+/* line-height: 25px; */
+/* } */
+.button i {
+	margin-left: 10px;
+}
+
+/* end section services */
+
+#testimonials {
+	text-align: center;
+}
+
+#testimonials .sectionTitle {
+	text-align: center;
+	margin-top: 1%;
+}
+
+#testimonials h2.sectionTitle::after {
+	content: "";
+	display: block;
+	margin-top: 30px;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	width: 30px;
+	height: 5px;
+	background-color: #d2b356;
+}
+
+.content-testimonials {
+	display: flex;
+	justify-content: space-around;
+	padding-top: 50px;
+}
+
+.content-testimonials img {
+	width: 40%;
+	text-align: center;
+	margin-left: 50%;
+	transform: translateX(-60%);
+	border-radius: 50%;
+}
+
+.content-testimonials q {
+	display: inline-block;
+	font-size: 1.2em;
+	color: #111;
+	padding-top: 20px;
+}
+
+#testimonials q::after {
+	content: "";
+	display: block;
+	margin-top: 30px;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	width: 30px;
+	height: 5px;
+	background-color: #d2b356;
+}
+
+.content-testimonials p {
+	/* font-size: 1.2em; */
+	color: #111;
+	margin-top: 25px;
+	padding-top: 0;
+	font-size: 1em;
+}
