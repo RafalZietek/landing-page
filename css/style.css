@@ -185,7 +185,8 @@ header h2::after {
 #about,
 #gallery,
 #services,
-#testimonials {
+#testimonials,
+#clients {
 	padding-top: 15%;
 	padding-bottom: 5%;
 }
@@ -254,16 +255,6 @@ h3,
 	margin-bottom: 10%;
 }
 
-.images {
-	float: left;
-	width: 33%;
-	height: 25vh;
-	background-position: center;
-	background-size: 100%;
-	transition: 1s;
-	cursor: pointer;
-}
-
 div.images:nth-child(1) {
 	background-image: url('../img/gallery-image-1.jpg');
 }
@@ -288,9 +279,37 @@ div.images:nth-child(6) {
 	background-image: url('../img/gallery-image-6.jpg');
 }
 
+.images {
+	float: left;
+	width: 33%;
+	height: 25vh;
+	background-position: center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	transition: 1s;
+	cursor: pointer;
+}
+
+.images p {
+	text-align: center;
+	background-color: black;
+	height: 25vh;
+	opacity: 0;
+	transition: 1s;
+}
+
+.images p i {
+	color: #d2b356;
+	font-size: 30px;
+	line-height: 25vh;
+}
+
 div.images:hover {
+	background-size: 130% 130%;
+}
+
+div.images p:hover {
 	opacity: 0.5;
-	background-size: 130%;
 }
 
 /* end section gallery */
@@ -347,10 +366,6 @@ div.images:hover {
 	margin-top: 12%;
 }
 
-/* .button span { */
-/* display: block; */
-/* line-height: 25px; */
-/* } */
 .button i {
 	margin-left: 10px;
 }
@@ -416,3 +431,93 @@ div.images:hover {
 	padding-top: 0;
 	font-size: 1em;
 }
+
+/* end section testimonials */
+
+#clients {
+	display: flex;
+	justify-content: flex-start;
+}
+
+#clients .col-2 {
+	flex-basis: 70%;
+	/*dla dzieci*/
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#clients .col-2 .client {
+	width: 33%;
+	height: 20vh;
+}
+
+#clients h2.sectionTitle::after {
+	content: "";
+	display: block;
+	margin-top: 30px;
+	width: 30px;
+	height: 5px;
+	background-color: #d2b356;
+}
+
+div.client {
+	background-position: center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+div.client:nth-child(1) {
+	background-image: url('../img/company-logo1.png');
+}
+
+div.client:nth-child(2) {
+	background-image: url('../img/company-logo2.png');
+}
+
+div.client:nth-child(3) {
+	background-image: url('../img/company-logo3.png');
+}
+
+div.client:nth-child(4) {
+	background-image: url('../img/company-logo4.png');
+}
+
+div.client:nth-child(5) {
+	background-image: url('../img/company-logo5.png');
+}
+
+div.client:nth-child(6) {
+	background-image: url('../img/company-logo6.png');
+}
+
+div.client:nth-child(7) {
+	background-image: url('../img/company-logo7.png');
+}
+
+div.client:nth-child(8) {
+	background-image: url('../img/company-logo8.png');
+}
+
+div.client:nth-child(9) {
+	background-image: url('../img/company-logo9.png');
+}
+
+.client p {
+	display: block;
+	text-align: center;
+	background-color: black;
+	line-height: 20vh;
+	padding-top: 0;
+	opacity: 0;
+	transition: 0.5s;
+	color: #fff;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+div.client p:hover {
+	opacity: 0.8;
+}
+
+/* end section clients */
