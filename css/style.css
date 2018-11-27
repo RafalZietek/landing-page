@@ -90,7 +90,7 @@ img.logo {
 
 nav {
 	display: inline-block;
-	font-family: Arial;
+	/* font-family: Arial; */
 }
 
 nav ul li {
@@ -186,7 +186,8 @@ header h2::after {
 #gallery,
 #services,
 #testimonials,
-#clients {
+#clients,
+#pricing {
 	padding-top: 15%;
 	padding-bottom: 5%;
 }
@@ -199,8 +200,9 @@ header h2::after {
 
 h3,
 .sectionParagraph {
-	color: #9c9c9c;
+	color: #ccc;
 	font-size: 1.2em;
+	letter-spacing: 2px;
 }
 
 .sectionTitle {
@@ -208,6 +210,7 @@ h3,
 	padding-bottom: 15px;
 	font-size: 34px;
 	font-weight: 700;
+	color: #111;
 }
 
 #about h2.sectionTitle::after {
@@ -521,3 +524,123 @@ div.client p:hover {
 }
 
 /* end section clients */
+
+#pricing {
+	text-align: center;
+	background-color: #f5f5f5;
+}
+
+#pricing .sectionTitle {
+	text-align: center;
+	margin-top: 1%;
+
+}
+
+#pricing h2.sectionTitle::after {
+	content: "";
+	display: block;
+	margin-top: 30px;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	width: 30px;
+	height: 5px;
+	background-color: #d2b356;
+}
+
+.content-pricing {
+	display: flex;
+	justify-content: space-around;
+	max-width: 1245px;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+
+.pricing-col1,
+.pricing-col2,
+.pricing-col3 {
+	flex-basis: 30%;
+	background-color: #fff;
+	padding: 25px 0;
+	margin: 0 25px;
+	border: 10px solid #fff;
+	transition: all 0.2s ease-in-out 0s;
+}
+
+.pricing-title {
+	color: #111;
+	/* font-weight: 300; */
+}
+
+.pricing-version {
+	color: #ccc;
+	font-style: italic;
+}
+
+.pricing-price {
+	background-color: #f5f5f5;
+	margin: 30px 10px;
+}
+
+.pricing-price p:first-child {
+	padding-top: 25px;
+	margin-bottom: -20px;
+	margin-left: -75px;
+	font-size: 1em;
+	font-weight: 700;
+}
+
+.pricing-price p:nth-child(2) {
+	font-size: 50px;
+	font-weight: 700;
+}
+
+.pricing-content {
+	color: #ccc;
+	font-style: italic;
+	padding: 0 20px 25px;
+}
+
+.pricing-col1 .pricing-title,
+.pricing-col2 .pricing-title,
+.pricing-col3 .pricing-title {
+	padding-top: 25px;
+}
+
+.pricing-col1 ul,
+.pricing-col2 ul,
+.pricing-col3 ul {
+	list-style: none;
+}
+
+.pricing-col1 ul li,
+.pricing-col2 ul li,
+.pricing-col3 ul li {
+	padding: 20px 0;
+}
+
+.pricing-col1 .button,
+.pricing-col2 .button,
+.pricing-col3 .button {
+	margin-bottom: 7%;
+}
+
+.pricing-col2 .pricing-price {
+	background-color: #d2b356;
+	color: #fff;
+}
+
+.pricing-col2 .pricing-content {
+	color: #fff;
+}
+
+.pricing-col1:hover {
+	border: 10px solid #d2b356;
+}
+
+.pricing-col2:hover {
+	border: 10px solid #d2b356;
+}
+
+.pricing-col3:hover {
+	border: 10px solid #d2b356;
+}
