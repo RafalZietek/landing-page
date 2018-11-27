@@ -549,7 +549,7 @@ div.client p:hover {
 
 .content-pricing {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	max-width: 1245px;
 	margin: 0 auto;
 	padding-top: 50px;
@@ -568,7 +568,6 @@ div.client p:hover {
 
 .pricing-title {
 	color: #111;
-	/* font-weight: 300; */
 }
 
 .pricing-version {
@@ -643,4 +642,43 @@ div.client p:hover {
 
 .pricing-col3:hover {
 	border: 10px solid #d2b356;
+}
+
+/* end section pricing */
+footer {
+	height: 50px;
+	max-width: 1245px;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+
+footer ul {
+	float: right;
+	/* margin-right: 20px; */
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+footer p {
+	float: left;
+	/* margin-left: 20px; */
+	padding: 20px;
+}
+
+.arrow {
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	right: 40px;
+	bottom: 40px;
+	background-color: #ccc;
+	color: #fff;
+	font-size: 30px;
+	text-align: center;
+	line-height: 50px;
+}
+
+.arrow a {
+	text-decoration: none;
+	color: #fff;
 }
