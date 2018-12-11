@@ -23,7 +23,7 @@ body {
 
 .border {
 	position: relative;
-	z-index: 10;
+	z-index: 10000;
 }
 
 .wraper {
@@ -162,8 +162,19 @@ nav ul li a:hover {
 	max-width: 1245px;
 	background-color: #fff;
 	z-index: 1000;
-	border-bottom: 1px solid #ddd;
+	/* border-bottom: 1px solid #ddd; */
 	transform: translateY(0);
+}
+
+.underline {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 94px;
+	background-color: #fff;
+	border-bottom: 1px solid #ddd;
+	display: none;
 }
 
 h1 {
@@ -282,6 +293,18 @@ h3,
 	transition: 1s;
 }
 
+div.box:nth-child(2) {
+	transition-delay: 0.1s;
+}
+
+iv.box:nth-child(3) {
+	transition-delay: 0.2s;
+}
+
+iv.box:nth-child(4) {
+	transition-delay: 0.3s;
+}
+
 .showArticle {
 	transform: translateY(0);
 }
@@ -314,22 +337,27 @@ div.images:nth-child(1) {
 
 div.images:nth-child(2) {
 	background-image: url('../img/gallery-image-2.jpg');
+	transition-delay: 0.1s;
 }
 
 div.images:nth-child(3) {
 	background-image: url('../img/gallery-image-3.jpg');
+	transition-delay: 0.2s;
 }
 
 div.images:nth-child(4) {
 	background-image: url('../img/gallery-image-4.jpg');
+	transition-delay: 0.3s;
 }
 
 div.images:nth-child(5) {
 	background-image: url('../img/gallery-image-5.jpg');
+	transition-delay: 0.4s;
 }
 
 div.images:nth-child(6) {
 	background-image: url('../img/gallery-image-6.jpg');
+	transition-delay: 0.5s;
 }
 
 .images {
@@ -339,9 +367,19 @@ div.images:nth-child(6) {
 	background-position: center;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
-	transition: 1s;
 	cursor: pointer;
+	transform: scale(0);
+	transition: .4s linear;
 }
+
+div.imges:nth-child(2) {
+	transition-delay: 1s;
+}
+
+.images.showImage {
+	transform: scale(1);
+}
+
 
 .images p {
 	text-align: center;
@@ -741,4 +779,84 @@ footer p {
 
 .showArrow {
 	transform: translateY(0);
+}
+
+/* slider */
+.modal-wrap {
+	display: none;
+}
+
+.showSlider {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 1001;
+}
+
+.modal-wrap.showSlider .modal {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 98%;
+	/* border: 2px solid #000; */
+}
+
+.modal .bottom {
+	flex-basis: 10%;
+	position: relative;
+	background-color: #111;
+}
+
+.modal .top {
+	flex-grow: 1;
+	/* background-color: #fff; */
+}
+
+.next,
+.prev,
+.hidden {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+
+.next,
+.hidden {
+	right: 4%;
+}
+
+.prev {
+	left: 4%;
+}
+
+.hidden {}
+
+.description {
+	display: block;
+	font-size: 1.5em;
+	padding: 2.5%;
+	font-weight: 300;
+	color: #fff;
+}
+
+.image {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+}
+
+.image img {
+	/* width: 80%; */
+	height: 60%;
 }

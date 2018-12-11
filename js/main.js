@@ -1,52 +1,50 @@
 const arrow = document.querySelector(".arrow");
 const nav = document.querySelector(".mainNav");
+const underline = document.querySelector(".underline");
 
 const menu = document.querySelectorAll('nav ul li');
-console.log(menu);
 
+/*wysokość sekcji*/
+const heightHome = document.querySelector('#home').clientHeight;
+const heightAbout = document.querySelector('#about').clientHeight;
+const heightGallery = document.querySelector('#gallery').clientHeight;
+const heightServices = document.querySelector('#services').clientHeight;
+const heightTestimonials = document.querySelector('#testimonials').clientHeight;
+const heightClients = document.querySelector('#clients').clientHeight;
+const heightPricing = document.querySelector('#pricing').clientHeight;
+
+
+/*odległość sekcji od początku strony*/
+const distanceAbouToStart = document.querySelector('#about').offsetTop;
+const distanceGalleryToStart = document.querySelector('#gallery').offsetTop;
+const distanceServicesToStart = document.querySelector('#services').offsetTop;
+const distanceTestimonialsToStart = document.querySelector('#testimonials').offsetTop;
+const distanceClientsToStart = document.querySelector('#clients').offsetTop;
+const distancePricingToStart = document.querySelector('#pricing').offsetTop;
+
+/*pobranie elementów box sekcji about*/
+const boxes = document.querySelectorAll('.box');
+
+/*pobranie elementów images sekcji gallery*/
+const images = [...document.querySelectorAll('.images')];
 
 function hideElements() {
 
 	const scrollPosition = window.scrollY;
 
-	/*wysokość sekcji*/
-	const heightHome = document.querySelector('#home').clientHeight;
-	const heightAbout = document.querySelector('#about').clientHeight;
-	const heightGallery = document.querySelector('#gallery').clientHeight;
-	const heightServices = document.querySelector('#services').clientHeight;
-	const heightTestimonials = document.querySelector('#testimonials').clientHeight;
-	const heightClients = document.querySelector('#clients').clientHeight;
-	const heightPricing = document.querySelector('#pricing').clientHeight;
-
-
-	/*odległość sekcji od początku strony*/
-	const distanceAbouToStart = document.querySelector('#about').offsetTop;
-	const distanceGalleryToStart = document.querySelector('#gallery').offsetTop;
-	const distanceServicesToStart = document.querySelector('#services').offsetTop;
-	const distanceTestimonialsToStart = document.querySelector('#testimonials').offsetTop;
-	const distanceClientsToStart = document.querySelector('#clients').offsetTop;
-	const distancePricingToStart = document.querySelector('#pricing').offsetTop;
-
-	/*pobranie elementów box sekcji about*/
-	const box_1 = document.querySelector('.box:nth-child(1)');
-	const box_2 = document.querySelector('.box:nth-child(2)');
-	const box_3 = document.querySelector('.box:nth-child(3)');
-	const box_4 = document.querySelector('.box:nth-child(4)');
-
-
 	/*pokazanie strzałki i menu*/
-	if (scrollPosition > 700) {
+	if (scrollPosition > heightHome - 10) {
 		nav.classList.add("moveNav");
 	} else {
 		nav.classList.remove("moveNav");
 	}
 
-	if (scrollPosition > 800) {
-		// arrow.style.display = "block";		
+	if (scrollPosition > heightHome) {
+		underline.style.display = "block";
 		nav.classList.add("fixed");
 		arrow.classList.add("showArrow");
 	} else {
-		// arrow.style.display = "none";
+		underline.style.display = "none";
 		nav.classList.remove("fixed");
 		arrow.classList.remove("showArrow");
 	}
@@ -118,18 +116,25 @@ function hideElements() {
 
 	/*pokazanie umiejętnoścui w sekcji about */
 	if (scrollPosition > distanceAbouToStart - heightAbout) {
-		box_1.classList.add("showArticle");
-		box_2.classList.add("showArticle");
+		boxes.forEach(box => {
+			box.classList.add('showArticle');
+		});
 	} else {
-		box_1.classList.remove("showArticle");
-		box_2.classList.remove("showArticle");
+		boxes.forEach(box => {
+			box.classList.remove('showArticle')
+		});
 	}
-	if (scrollPosition > distanceAbouToStart - heightAbout + 200) {
-		box_3.classList.add("showArticle");
-		box_4.classList.add("showArticle");
+
+
+	/*pokazanie galerii w sekcji gallery */
+	if (scrollPosition > distanceGalleryToStart - heightGallery) {
+		images.forEach(image => {
+			image.classList.add('showImage');
+		});
 	} else {
-		box_3.classList.remove("showArticle");
-		box_4.classList.remove("showArticle");
+		images.forEach(image => {
+			image.classList.remove('showImage');
+		});
 	}
 
 }
