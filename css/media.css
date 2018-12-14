@@ -1,0 +1,394 @@
+@media screen and (max-width: 1024px) {
+	.border {
+		display: none;
+	}
+
+	header {
+		background-size: 150%;
+		background-position: center 0;
+		margin: 0 auto;
+	}
+
+	nav {
+		position: absolute;
+		top: 50px;
+		left: 0;
+		right: 0;
+		/* width: 100%; */
+		margin-left: -15px;
+		margin-right: -15px;
+		/* padding-top: 40px; */
+		background-color: #fff;
+		/* zrobić hamburgera */
+		display: none;
+	}
+
+	nav ul li {
+		display: block;
+		border-bottom: 1px solid #eee;
+		line-height: 50px;
+		margin-right: 15px;
+	}
+
+	.mainNav aside {
+		margin-right: 40px;
+	}
+
+	li.burger {
+		display: block;
+	}
+
+	#about,
+	#gallery,
+	#services,
+	#testimonials,
+	#clients,
+	#pricing {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.fixed {
+		top: 0;
+		left: 20px;
+		right: 20px;
+		width: auto;
+		color: #999;
+	}
+
+	.underline {
+		height: 74px;
+	}
+
+	.fixed .mainSocialMedia li a {
+		color: #999;
+	}
+}
+
+@media screen and (max-width: 813px) {
+	header {
+		background-size: 175%;
+		height: auto;
+	}
+
+	#gallery {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.images {
+		height: 43vh;
+		width: 33.3333333%;
+	}
+
+	.image {
+		transform: translate(-50%, -50%) scale(0.9);
+	}
+
+	#clients .col-2 .client {
+		height: 30vh;
+	}
+
+	.client p {
+		line-height: 30vh;
+	}
+
+	.pricing-col1 ul li,
+	.pricing-col2 ul li,
+	.pricing-col3 ul li {
+		padding: 15px 0;
+		border-bottom: 1px solid #eee;
+	}
+
+	.pricing-col1 ul li:last-child,
+	.pricing-col2 ul li:last-child,
+	.pricing-col3 ul li:last-child {
+		border-bottom: none;
+	}
+
+	.pricing-col1 .button,
+	.pricing-col2 .button,
+	.pricing-col3 .button {
+		font-size: 13px;
+	}
+
+	nav ul li {
+		line-height: 45px;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	header {
+		background-size: 100%;
+	}
+
+	h1 {
+		width: 100%;
+	}
+
+	h2 {
+		width: 100%;
+		font-size: 1.4em;
+	}
+
+	.mainDiv {
+		width: 100%;
+		float: none;
+	}
+
+	.box {
+		float: none;
+		width: 100%;
+		margin-left: 0;
+		padding: 0;
+	}
+
+	.images {
+		height: 50vh;
+		width: 50%;
+	}
+
+	#services,
+	.content-testimonials,
+	#clients,
+	.content-pricing {
+		flex-wrap: wrap;
+	}
+
+	#services {
+		position: relative;
+	}
+
+	.item {
+		flex-basis: 45%;
+	}
+
+	#services .item.col-3 {
+		position: absolute;
+		top: 320px;
+		left: 100px;
+	}
+
+	#services .item.col-3 img {
+		width: 35%;
+	}
+
+	.content-testimonials .item.col-3 {
+		padding-top: 40px;
+	}
+
+	#clients .col-2 {
+		flex-basis: 100%;
+	}
+
+	#clients .col-2 .client {
+		height: 50vh;
+		width: 50%;
+	}
+
+	.client p {
+		line-height: 50vh;
+	}
+
+	.pricing-col1,
+	.pricing-col2,
+	.pricing-col3 {
+		flex-basis: 45%;
+		padding: 10px 0;
+		margin: 10px 10px;
+	}
+
+	.pricing-price {
+		margin: 20px 0;
+	}
+
+	.pricing-price p:first-child {
+		margin-bottom: -25px;
+		font-size: 1.3em;
+		margin-left: -85px;
+	}
+
+	.pricing-price p:nth-child(2) {
+		font-size: 62px;
+		font-weight: bold;
+	}
+
+	.arrow {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	header {
+		background-size: 150%;
+	}
+
+	h1 {
+		padding-right: 10px;
+	}
+
+	div.client {
+		background-size: 90% 90%;
+	}
+
+	#pricing .sectionTitle {
+		width: 101%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+	#about,
+	#gallery,
+	#services,
+	#testimonials,
+	#clients,
+	#pricing {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	header {
+		background-size: 200%;
+		padding: 10px 0;
+	}
+
+	h1 {
+		padding-right: 0;
+	}
+
+	img.logo {
+		height: 22px;
+	}
+
+	.item {
+		flex-basis: 48%;
+	}
+
+	div.client {
+		background-size: 85% 85%;
+	}
+
+	.pricing-col1,
+	.pricing-col2,
+	.pricing-col3 {
+		flex-basis: 50%;
+		padding: 0 0;
+		margin: 5px 0;
+	}
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+	.images {
+		height: 15vh;
+	}
+
+	#clients .col-2 .client {
+		height: 12vh;
+	}
+
+	.client p {
+		line-height: 12vh;
+	}
+
+	.pricing-col1,
+	.pricing-col2,
+	.pricing-col3 {
+		margin: 0 15px;
+	}
+}
+
+@media screen and (max-width: 440px) and (orientation: portrait) {
+
+	#about,
+	#gallery,
+	#services,
+	#testimonials,
+	#clients,
+	#pricing {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	header {
+		background-size: 300%;
+		padding: 10px 20px;
+	}
+
+	.mainSocialMedia li:nth-child(1),
+	.mainSocialMedia li:nth-child(2),
+	.mainSocialMedia li:nth-child(3),
+	.mainSocialMedia li:nth-child(4),
+	.mainSocialMedia li:nth-child(5) {
+		display: none;
+	}
+
+	.images {
+		height: 35vh;
+		width: 100%;
+	}
+
+	.client p {
+		line-height: 35vh;
+	}
+
+	div.client {
+		background-size: 80% 80%;
+	}
+
+	.item {
+		flex-basis: 100%;
+	}
+
+	.sectionParagraph {
+		margin-top: 0;
+	}
+
+	h3 {
+		padding-top: 15px;
+	}
+
+	#services .item.col-3 {
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+
+	#services .item.col-3 img {
+		width: 50%;
+	}
+
+	.content-testimonials {
+		padding-top: 35px;
+	}
+
+	.content-testimonials .item.col-2,
+	.content-testimonials .item.col-3 {
+		padding-top: 50px;
+	}
+
+	.content-testimonials p {
+		margin-top: 15px;
+	}
+
+	#clients .col-2 .client {
+		height: 35vh;
+		width: 100%;
+	}
+
+	.pricing-col1,
+	.pricing-col2,
+	.pricing-col3 {
+		flex-basis: 100%;
+		margin: 10px 10px;
+	}
+
+	footer p {
+		width: 40%;
+		padding: 5px;
+	}
+
+	footer ul {
+		padding: 10px;
+	}
+}

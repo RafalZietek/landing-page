@@ -1,6 +1,7 @@
 const arrow = document.querySelector(".arrow");
 const nav = document.querySelector(".mainNav");
 const underline = document.querySelector(".underline");
+const burgerMenu = document.querySelector(".mainNav nav");
 
 const menu = document.querySelectorAll('nav ul li');
 
@@ -28,9 +29,19 @@ const boxes = document.querySelectorAll('.box');
 /*pobranie elementów images sekcji gallery*/
 const images = [...document.querySelectorAll('.images')];
 
+const backgroudImage = document.querySelector('#home');
+
+
+//szerokość okna przeglądarki
+const windowWidth = window.innerWidth;
+
+
 function hideElements() {
 
 	const scrollPosition = window.scrollY;
+
+	home.style.backgroundPosition = "center " + (-scrollPosition / 2) + 'px';
+
 
 	/*pokazanie strzałki i menu*/
 	if (scrollPosition > heightHome - 10) {
@@ -39,7 +50,7 @@ function hideElements() {
 		nav.classList.remove("moveNav");
 	}
 
-	if (scrollPosition > heightHome) {
+	if (scrollPosition > heightHome - 100) {
 		underline.style.display = "block";
 		nav.classList.add("fixed");
 		arrow.classList.add("showArrow");
@@ -98,20 +109,46 @@ function hideElements() {
 		}
 	}
 
-	if (scrollPosition < heightHome) {
-		menu[1].classList.remove("active");
-	} else if (scrollPosition < heightAbout + distanceAbouToStart) {
-		underLineMenu(1);
-	} else if (scrollPosition < heightGallery + distanceGalleryToStart) {
-		underLineMenu(2);
-	} else if (scrollPosition < heightServices + distanceServicesToStart) {
-		underLineMenu(3);
-	} else if (scrollPosition < heightTestimonials + distanceTestimonialsToStart) {
-		underLineMenu(4);
-	} else if (scrollPosition < heightClients + distanceClientsToStart) {
-		underLineMenu(5);
+	// zmiana coloru menu w mniejszych rozdzielczościach
+	function removeColorMenu() {
+		menu.forEach(menu => {
+			menu.firstChild.classList.remove('activeMedia');
+		});
+	}
+
+	if (windowWidth > 1024) {
+		if (scrollPosition < heightHome) {
+			menu[1].classList.remove("active");
+		} else if (scrollPosition < heightAbout + distanceAbouToStart) {
+			underLineMenu(1);
+		} else if (scrollPosition < heightGallery + distanceGalleryToStart) {
+			underLineMenu(2);
+		} else if (scrollPosition < heightServices + distanceServicesToStart) {
+			underLineMenu(3);
+		} else if (scrollPosition < heightTestimonials + distanceTestimonialsToStart) {
+			underLineMenu(4);
+		} else if (scrollPosition < heightClients + distanceClientsToStart) {
+			underLineMenu(5);
+		} else {
+			underLineMenu(6);
+		}
 	} else {
-		underLineMenu(6);
+		removeColorMenu();
+		if (scrollPosition < heightHome) {
+			removeColorMenu();
+		} else if (scrollPosition < heightAbout + distanceAbouToStart) {
+			menu[1].firstChild.classList.add('activeMedia');
+		} else if (scrollPosition < heightGallery + distanceGalleryToStart) {
+			menu[2].firstChild.classList.add('activeMedia');
+		} else if (scrollPosition < heightServices + distanceServicesToStart) {
+			menu[3].firstChild.classList.add('activeMedia');
+		} else if (scrollPosition < heightTestimonials + distanceTestimonialsToStart) {
+			menu[4].firstChild.classList.add('activeMedia');
+		} else if (scrollPosition < heightClients + distanceClientsToStart) {
+			menu[5].firstChild.classList.add('activeMedia');
+		} else {
+			menu[6].firstChild.classList.add('activeMedia');
+		}
 	}
 
 	/*pokazanie umiejętnoścui w sekcji about */
@@ -136,7 +173,35 @@ function hideElements() {
 			image.classList.remove('showImage');
 		});
 	}
-
 }
 
 window.addEventListener("scroll", hideElements)
+
+// obsługa menu rozwijanego
+document.querySelector('.burger').addEventListener('click', () => {
+	burgerMenu.style.display = 'block';
+	document.querySelector('.burgerHidden').style.display = 'block';
+	document.querySelector('.burger').style.display = 'none';
+});
+
+document.querySelector('.burgerHidden').addEventListener('click', () => {
+	burgerMenu.style.display = 'none';
+	document.querySelector('.burgerHidden').style.display = 'none';
+	document.querySelector('.burger').style.display = 'block';
+});
+
+if (windowWidth <= 1024) {
+	menu.forEach(menu => {
+		menu.addEventListener('click', function () {
+			burgerMenu.style.display = 'none';
+			document.querySelector('.burgerHidden').style.display = 'none';
+			document.querySelector('.burger').style.display = 'block';
+		});
+	});
+}
+// przeładowanie strony
+// function reLoad() {
+// 	window.location.reload();
+// }
+
+// window.addEventListener("resize", reLoad);

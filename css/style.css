@@ -73,10 +73,12 @@ header {
 	background-image: url('../img/banner-image-1.jpg');
 	background-attachment: fixed;
 	background-size: cover;
-	background-position-x: center;
-	margin: 30px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin: 0 auto;
 	font-size: 1em;
-	padding: 10px 15px;
+	padding: 25px 15px;
+	overflow: hidden;
 }
 
 .wraperMainNav {
@@ -106,7 +108,7 @@ img.logo {
 
 nav {
 	display: inline-block;
-	/* font-family: Arial; */
+	margin-left: 75px;
 }
 
 nav ul li {
@@ -130,22 +132,40 @@ nav ul li a:hover {
 	border-bottom: 3px solid #d2b356;
 }
 
-.socialMedia {
+.activeMedia {
+	color: #d2b356;
+}
+
+.mainSocialMedia,
+.footerSocialMedia {
 	display: inline-block;
 }
 
-.socialMedia li {
+.mainSocialMedia li,
+.footerSocialMedia li {
 	display: inline-block;
-	margin-left: 10px;
+	margin-left: 15px;
 	cursor: pointer;
 }
 
-.socialMedia li a {
-	color: #666;
+.mainSocialMedia li a,
+.footerSocialMedia li a {
+	color: #111;
+	font-size: 15px;
 }
 
-.socialMedia li a:hover {
+.mainSocialMedia li a:hover,
+.footerSocialMedia li a:hover {
 	color: #aaa;
+}
+
+li.burger,
+li.burgerHidden {
+	position: absolute;
+	top: 0;
+	right: 5px;
+	font-size: 22px;
+	display: none;
 }
 
 .moveNav {
@@ -175,6 +195,7 @@ nav ul li a:hover {
 	background-color: #fff;
 	border-bottom: 1px solid #ddd;
 	display: none;
+	z-index: 999;
 }
 
 h1 {
@@ -222,7 +243,8 @@ header h2::after {
 	background-color: #fff;
 	border: 3px solid #111;
 	padding: 15px 20px;
-	margin-top: 7%;
+	margin-top: 15%;
+	margin-bottom: 15%;
 	cursor: pointer;
 	font-weight: bold;
 }
@@ -407,7 +429,6 @@ div.images p:hover {
 #services {
 	display: flex;
 	justify-content: space-around;
-
 }
 
 .item {
